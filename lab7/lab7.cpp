@@ -1,6 +1,6 @@
 /* zad 1 - Napisz program, który narysuje na ekranie choinkê z gwiazdek * o wysokoœci n. Wykorzystaj funkcjê
 rekurencyjn¹ do wypisywania linii.
-*/
+
 
 #include <iostream>
 using namespace std;
@@ -28,8 +28,154 @@ int choinka(int n, int i) {
 		choinka(n, i + 1);
 		return 0;
 	}
+}
+*/
+  
+
+/* zad 2 - Napisz program, który obliczy sumê cyfr liczby naturalnej podanej przez u¿ytkownika. Zaimplementuj
+dwie wersje funkcji: iteracyjn¹ i rekurencyjn¹.
+
+#include <iostream>
+using namespace std;
+int s_iteracyjna(int n);
+int s_rekurencyjna(int n);
+
+int main() {
+		int n;
+	cout << "Podaj liczbe naturalna: ";
+	cin >> n;
+	// cout << "Suma cyfr (iteracyjnie): " << s_iteracyjna(n) << endl;
+	cout << "Suma cyfr (rekurencyjnie): " << s_rekurencyjna(n) << endl;
+	return 0;
+}
+
+int s_iteracyjna(int n) {
+	int suma = 0;
+	while (n > 0) {
+		suma = suma + (n % 10); //n%10 daje ostatnia cyfre n
+		n = n / 10; //usuwamy ostatnia cyfre n
+	}
+	return suma;
+}
+
+
+int s_rekurencyjna(int n) {
+	int suma = 0;
+	if (n == 0)
+		return 0;
+	else {
+		suma = (n % 10) + s_rekurencyjna(n / 10);
+		// n%10 daje ostatnia cyfre n , s_rekurencyjna(n/10) wywoluje funkcje dla n bez ostatniej cyfry
+		return suma;
+	}
+}
+
+ */
+
+/* zad 3 -  Napisz program, który odwróci napis (string) podany przez u¿ytkownika. Wykorzystaj do tego funkcjê
+rekurencyjn¹. 
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string odwroc(string str);
+
+int main() {
+	string str;
+	cout << "Podaj napis: ";
+	getline(cin, str);
+	cout << "Napis odwrocony: " << odwroc(str) << endl;
+	return 0;
+}
+
+string odwroc(string str) {
+	if (str.length() == 0) {
+		return "";
+	}
+	else {
+		return odwroc(str.substr(1)) + str[0];
+		// zwraca funkcje wywolana dla napisu bez pierwszego znaku + pierwszy znak napisu na koñcu
+	}
+}
+*/
+
+/* zad 4 - Napisz program, który sprawdzi, czy dany napis jest palindromem (czytany od przodu i od ty³u jest
+taki sam). Wykorzystaj funkcjê rekurencyjn¹.
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+string odwroc(string str);
+void porownaj(string str, string odwrocony);
+
+int main() {
+	string str;
+	cout << "Podaj napis: ";
+	getline(cin, str);
+	cout << "Napis odwrocony: " << odwroc(str) << endl;
+	porownaj(str, odwroc(str));
+	return 0;
+}
+
+string odwroc(string str) {
+	if (str.length() == 0) {
+		return "";
+	}
+	else {
+		return odwroc(str.substr(1)) + str[0];
+		// zwraca funkcje wywolana dla napisu bez pierwszego znaku + pierwszy znak napisu na koñcu
+	}
+}
+
+void porownaj(string str, string odwrocony) {
+	if (str == odwrocony)
+		cout << "Napis jest palindromem." << endl;
+	else
+		cout << "Napis nie jest palindromem." << endl;
+}
+
+ */
+
+/* zad 5 - Napisz program, który znajdzie najwiêkszy element w tablicy liczb ca³kowitych (rozmiar i elementy
+wprowadza u¿ytkownik). Zaimplementuj dwie wersje funkcji: iteracyjn¹ i rekurencyjn¹.
+ */
+
+#include <iostream>
+using namespace std;
+int max_iteracyjna(int arr[], int n);	
+int max_rekurencyjna(int arr[], int n);
+
+int main() {
+	int n;
+	cout << "Podaj wielkosc tablicy: ";
+	cin >> n;
+	int* tab = new int[n];
+	for (int i = 0; i < n; i++) {
+		tab[i] = i;
+	}
+	cout << "Podaj elementy tablicy: ";
+	for (int i = 0; i < n; i++)
+		cin >> tab[i];
+
+	cout << "Wprowadzona tablica: "; 
+	for (int i = 0; i < n; i++)
+		cout << tab[i] << " ";
+	cout << endl;
+
+	cout << "Najwiekszy element (iteracyjnie): " << max_iteracyjna(tab, n) << endl;
+	cout << "Najwiekszy element (rekurencyjnie): " << max_rekurencyjna(tab, n) << endl;
 
 }
-  
-/* zad 2 - */
+
+int max_iteracyjna(int arr[], int n) {
+	int max = arr[0];
+	for (int i = 1; i < n; i++) {
+		if (arr[i] > max)
+			max = arr[i];
+	}
+	return max;
+}
+
 
