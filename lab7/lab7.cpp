@@ -1,9 +1,9 @@
-// ten lab jest wyj¹tkowo bogaty w moje notatki dla samego siebie, które pewnie s¹ ma³o merytorycznie poprawne, bo pisane na bazie mojego rozumienia i pojedynczych konsultacji z czatem gpt xD
+ï»¿// ten lab jest wyjÄ…tkowo bogaty w moje notatki dla samego siebie, ktÃ³re pewnie sÄ… maÅ‚o merytorycznie poprawne, bo pisane na bazie mojego rozumienia i pojedynczych konsultacji z czatem gpt xD
 
 
 /* 
-zad 1 - Napisz program, który narysuje na ekranie choinkê z gwiazdek * o wysokoœci n. Wykorzystaj funkcjê
-rekurencyjn¹ do wypisywania linii.
+zad 1 - Napisz program, ktÃ³ry narysuje na ekranie choinkÄ™ z gwiazdek * o wysokoÅ›ci n. Wykorzystaj funkcjÄ™
+rekurencyjnÄ… do wypisywania linii.
 
 
 #include <iostream>
@@ -20,9 +20,9 @@ int main() {
 
 int choinka(int n, int i) {
 	if (i > n)
-		return 0; //warunek zakoñczenia rekurencji
+		return 0; //warunek zakoÅ„czenia rekurencji
 	else {
-		for (int j = 1; j <= n - i; j++) // spacje po lewej stronie ka¿dej linii choinki, j <= wysokoœæ-i
+		for (int j = 1; j <= n - i; j++) // spacje po lewej stronie kaÅ¼dej linii choinki, j <= wysokoÅ›Ä‡-i
 			//np dla n=3: i=1 -> 2 spacje, i=2 -> 1 spacja, i=3 -> 0 spacji
 			cout << " ";
 		for (int k = 1; k <= (2 * i - 1); k++) // liczba gwiazdek w danej linii = 2*i-1
@@ -36,8 +36,8 @@ int choinka(int n, int i) {
 */
   
 
-/* zad 2 - Napisz program, który obliczy sumê cyfr liczby naturalnej podanej przez u¿ytkownika. Zaimplementuj
-dwie wersje funkcji: iteracyjn¹ i rekurencyjn¹.
+/* zad 2 - Napisz program, ktÃ³ry obliczy sumÄ™ cyfr liczby naturalnej podanej przez uÅ¼ytkownika. Zaimplementuj
+dwie wersje funkcji: iteracyjnÄ… i rekurencyjnÄ….
 
 #include <iostream>
 using namespace std;
@@ -76,8 +76,8 @@ int s_rekurencyjna(int n) {
 
  */
 
-/* zad 3 -  Napisz program, który odwróci napis (string) podany przez u¿ytkownika. Wykorzystaj do tego funkcjê
-rekurencyjn¹. 
+/* zad 3 -  Napisz program, ktÃ³ry odwrÃ³ci napis (string) podany przez uÅ¼ytkownika. Wykorzystaj do tego funkcjÄ™
+rekurencyjnÄ…. 
 
 #include <iostream>
 #include <string>
@@ -99,13 +99,13 @@ string odwroc(string str) {
 	}
 	else {
 		return odwroc(str.substr(1)) + str[0];
-		// zwraca funkcje wywolana dla napisu bez pierwszego znaku + pierwszy znak napisu na koñcu
+		// zwraca funkcje wywolana dla napisu bez pierwszego znaku + pierwszy znak napisu na koÅ„cu
 	}
 }
 */
 
-/* zad 4 - Napisz program, który sprawdzi, czy dany napis jest palindromem (czytany od przodu i od ty³u jest
-taki sam). Wykorzystaj funkcjê rekurencyjn¹.
+/* zad 4 - Napisz program, ktÃ³ry sprawdzi, czy dany napis jest palindromem (czytany od przodu i od tyÅ‚u jest
+taki sam). Wykorzystaj funkcjÄ™ rekurencyjnÄ….
 
 #include <iostream>
 #include <string>
@@ -129,7 +129,7 @@ string odwroc(string str) {
 	}
 	else {
 		return odwroc(str.substr(1)) + str[0];
-		// zwraca funkcje wywolana dla napisu bez pierwszego znaku + pierwszy znak napisu na koñcu
+		// zwraca funkcje wywolana dla napisu bez pierwszego znaku + pierwszy znak napisu na koÅ„cu
 	}
 }
 
@@ -142,8 +142,8 @@ void porownaj(string str, string odwrocony) {
 
  */
 
-/* zad 5 - Napisz program, który znajdzie najwiêkszy element w tablicy liczb ca³kowitych (rozmiar i elementy
-wprowadza u¿ytkownik). Zaimplementuj dwie wersje funkcji: iteracyjn¹ i rekurencyjn¹.
+/* zad 5 - Napisz program, ktÃ³ry znajdzie najwiÄ™kszy element w tablicy liczb caÅ‚kowitych (rozmiar i elementy
+wprowadza uÅ¼ytkownik). Zaimplementuj dwie wersje funkcji: iteracyjnÄ… i rekurencyjnÄ….
  
 
 #include <iostream>
@@ -185,28 +185,28 @@ int max_iteracyjna(int arr[], int n) {
 }
 
 int max_rekurencyjna(int arr[], int n) {
-	if (n == 1) // jeœli jest tylko jeden element
+	if (n == 1) // jeÅ›li jest tylko jeden element
 		return arr[0]; 
 	else {
 		int max = max_rekurencyjna(arr, n - 1); // znajdz max z {n, n-1}
-		// n-1 staje siê "nowym n" dla kolejnej rekurencji, a¿ dotrze do tego, ¿e n==1 - to ostatnie powtórzenie zwaraca wartoœæ z arr[0], która jest wtedy przypisana do max
-		// i jak po schodach wykonuje siê "if" poni¿ej dla rosn¹cych n: arr[1]>max?, arr[2]>max_z_poprzedniej_rekurencji? itd.
+		// n-1 staje siÄ™ "nowym n" dla kolejnej rekurencji, aÅ¼ dotrze do tego, Å¼e n==1 - to ostatnie powtÃ³rzenie zwaraca wartoÅ›Ä‡ z arr[0], ktÃ³ra jest wtedy przypisana do max
+		// i jak po schodach wykonuje siÄ™ "if" poniÅ¼ej dla rosnÄ…cych n: arr[1]>max?, arr[2]>max_z_poprzedniej_rekurencji? itd.
 
-		if (arr[n - 1] > max) { //jeœli pierwszy element (tab[0]) jest wiêkszy od maxa
+		if (arr[n - 1] > max) { //jeÅ›li pierwszy element (tab[0]) jest wiÄ™kszy od maxa
 			return arr[n - 1];
 		}
 		else {
 			return max;
 		}
-		// mo¿na te¿ skróciæ do jednej linijki:
+		// moÅ¼na teÅ¼ skrÃ³ciÄ‡ do jednej linijki:
 		// return (arr[n - 1] > max) ? arr[n - 1] : m; // (condition) ? value_if_true : value_if_false
 	}
 }
 */
 
-/* zad 6 - Napisz program, który obliczy n-t¹ liczbê ci¹gu Fibonacciego (zaimplementuj dwie funkcje: iteracyjn¹
-i rekurencyjn¹). Program prosi u¿ytkownika o podanie wartoœci liczby n, gdzie n mo¿e byæ dowoln¹ liczb¹
-naturaln¹.
+/* zad 6 - Napisz program, ktÃ³ry obliczy n-tÄ… liczbÄ™ ciÄ…gu Fibonacciego (zaimplementuj dwie funkcje: iteracyjnÄ…
+i rekurencyjnÄ…). Program prosi uÅ¼ytkownika o podanie wartoÅ›ci liczby n, gdzie n moÅ¼e byÄ‡ dowolnÄ… liczbÄ…
+naturalnÄ….
 
 
 #include <iostream>
@@ -234,7 +234,7 @@ int fib_it(int n) {
 			a = b;
 			b = c;
 		}
-		return b; // równowa¿ne z return c
+		return b; // rÃ³wnowaÅ¼ne z return c
 	}
 }
 
@@ -244,15 +244,15 @@ int fib_rec(int n) {
 	else if (n == 1)
 		return 1; //przypadek F(1)
 	else {
-		return fib_rec(n - 1) + fib_rec(n - 2); // ka¿da liczba to suma dwóch poprzednich, wiêc liczba n to suma liczb (n-1) i (n-2)
+		return fib_rec(n - 1) + fib_rec(n - 2); // kaÅ¼da liczba to suma dwÃ³ch poprzednich, wiÄ™c liczba n to suma liczb (n-1) i (n-2)
 	}
 }
 
 */
 
 
-/* zad 7 - Napisz program, który obliczy potêgê zadanej liczby, zarówno podstawa jak i wyk³adnik powinny byæ
-liczbami naturalnymi okreœlonymi przez u¿ytkownika (zaimplementuj dwie funkcje: iteracyjn¹ i rekurencyjn¹). 
+/* zad 7 - Napisz program, ktÃ³ry obliczy potÄ™gÄ™ zadanej liczby, zarÃ³wno podstawa jak i wykÅ‚adnik powinny byÄ‡
+liczbami naturalnymi okreÅ›lonymi przez uÅ¼ytkownika (zaimplementuj dwie funkcje: iteracyjnÄ… i rekurencyjnÄ…). 
 
 #include <iostream>
 using namespace std;
@@ -285,7 +285,7 @@ int power_it(int b, int e) {
 
 int power_rec(int b, int e) {
 	if (e == 0)
-		return 1; // ka¿da liczba do potêgi 0 to 1, warunek zakoñczenia rekurencji
+		return 1; // kaÅ¼da liczba do potÄ™gi 0 to 1, warunek zakoÅ„czenia rekurencji
 	else {
 		return b * power_rec(b, e - 1); 
 	}
@@ -293,8 +293,8 @@ int power_rec(int b, int e) {
 
 */
 
-/* zad 8 - Napisz program, który obliczy silniê liczby naturalnej n. Program prosi u¿ytkownika o podanie wartoœci
-liczby n (zaimplementuj dwie funkcje: iteracyjn¹ i rekurencyjn¹). 
+/* zad 8 - Napisz program, ktÃ³ry obliczy silniÄ™ liczby naturalnej n. Program prosi uÅ¼ytkownika o podanie wartoÅ›ci
+liczby n (zaimplementuj dwie funkcje: iteracyjnÄ… i rekurencyjnÄ…). 
 
 #include <iostream>
 using namespace std;
@@ -317,7 +317,7 @@ int factorial_it(int n) {
 
 int factorial_rec(int n) {
 	if (n == 0 || n == 1) // || to OR logiczny
-		return 1; // 0! i 1! daj¹ 1, warunek zakoñczenia rekurencji
+		return 1; // 0! i 1! dajÄ… 1, warunek zakoÅ„czenia rekurencji
 	else {
 		return n * factorial_rec(n - 1); // n! = n * (n-1)!
 	}
@@ -325,6 +325,102 @@ int factorial_rec(int n) {
 
 */
 
-/* zad 9 - Napisz program, który obliczy sumê wszystkich liczb naturalnych od 1 do n. Program prosi u¿ytkownika
-o podanie wartoœci n. Zaimplementuj dwie wersje funkcji: iteracyjn¹ i rekurencyjn¹. 
+/* zad 9 - Napisz program, ktÃ³ry obliczy sumÄ™ wszystkich liczb naturalnych od 1 do n. Program prosi uÅ¼ytkownika
+o podanie wartoÅ›ci n. Zaimplementuj dwie wersje funkcji: iteracyjnÄ… i rekurencyjnÄ…. 
+
+
+#include <iostream>
+using namespace std;
+int sum_it(int n);
+int sum_rec(int n);
+int main() {
+	int n;
+	cout << "Enter a natural number (n) tp calculate the sum of all natural numbers from 1 to n: ";
+	cin >> n;
+	//cout << "The sum of all natural numbers from 1 to " << n << " is " << sum_it(n) << endl;
+	cout << "The sum of all natural numbers from 1 to " << n << " is " << sum_rec(n) << endl;
+}
+
+int sum_it(int n) {
+	int suma = 0;
+	for (int i =1; i <= n; i++) {
+		suma = suma + i;
+	}
+	return suma;
+}
+
+
+int sum_rec(int n) {
+	if(n == 0) {
+		return 0;
+	}
+	else {
+		return n + sum_rec(n - 1); // suma od 1 do n to n + suma od 1 do (n-1)
+	}
+}
+
 */
+
+/* zad 10 - Napisz program, ktÃ³ry obliczy najwiÄ™kszy wspÃ³lny dzielnik (NWD) dwÃ³ch liczb caÅ‚kowitych dodatnich
+(> 0). Program prosi uÅ¼ytkownika o podanie wartoÅ›ci tych liczb (zaimplementuj dwie funkcje: iteracyjnÄ… i
+rekurencyjnÄ…). */
+
+#include <iostream>
+using namespace std;
+int gcd_it(int a, int b);
+int gcd_rec(int a, int b);
+
+int main() {
+	int a, b;
+	cout << "Enter two positive integers to calculate their greatest common divisor (GCD): ";
+	cin >> a >> b;
+	// cout << "The GCD of " << a << " and " << b << " is " << gcd_it(a, b) << endl;
+	cout << "The GCD of " << a << " and " << b << " is " << gcd_rec(a, b) << endl;
+}
+
+
+//funkcje wykorzystujÄ… algorytm Euklidesa z wykorzystaniem modulo
+// Wikipedia: 
+// 1) oblicz c jako resztÄ™ z dzielenia a przez b
+// 2) zastÄ…p a liczbÄ… b, nastÄ™pnie b liczbÄ… c
+// 3) jeÅ¼eli wartoÅ›Ä‡ b wynosi 0, to a jest szukanÄ… wartoÅ›ciÄ… NWD, w przeciwnym wypadku przejdÅº do kroku 1
+
+
+int gcd_it(int a, int b) {
+	int c = a % b;
+	while (c != 0) { 
+		a=b; 
+		b = c; 
+		c = a % b;
+	}
+	return b;
+}
+
+int gcd_rec(int a, int b) {
+	if (b == 0)
+		return a;
+	else
+		return gcd_rec(b, a % b);
+}
+
+// np dla a=99, b=81
+
+// 1) gcd_rec(99, 81)
+//    b != 0 (b = 81)
+//    99 % 81 = 18
+//    > wywoÅ‚anie gcd_rec(81, 18)
+
+// 2) gcd_rec(81, 18)
+//    b != 0 (b = 18)
+//    81 % 18 = 9
+//    > wywoÅ‚anie gcd_rec(18, 9)
+
+// 3) gcd_rec(18, 9)
+//    b != 0 (b = 9)
+//    18 % 9 = 0
+//    > wywoÅ‚anie gcd_rec(9, 0)
+
+// 4) gcd_rec(9, 0)
+//    b == 0 > zwrÃ³Ä‡ a = 9
+
+
