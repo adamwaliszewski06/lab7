@@ -363,7 +363,7 @@ int sum_rec(int n) {
 
 /* zad 10 - Napisz program, który obliczy największy wspólny dzielnik (NWD) dwóch liczb całkowitych dodatnich
 (> 0). Program prosi użytkownika o podanie wartości tych liczb (zaimplementuj dwie funkcje: iteracyjną i
-rekurencyjną). */
+rekurencyjną).
 
 #include <iostream>
 using namespace std;
@@ -422,5 +422,77 @@ int gcd_rec(int a, int b) {
 
 // 4) gcd_rec(9, 0)
 //    b == 0 > zwróć a = 9
+
+ */
+
+/* zad 11 - Wykorzystaj kod z zadania 4 (??????) i przerób go tak aby obliczał najmniejszą wspólną wielokrotność (NWW)
+dwóch liczb całkowitych dodatnich (> 0). Program prosi użytkownika o podanie wartości tych liczb (zaimplementuj
+dwie funkcje: iteracyjną i rekurencyjną). 
+
+
+#include <iostream>
+using namespace std;
+int lcm_it(int a, int b);
+int lcm_rec(int a, int b);
+
+int main() {
+	int a, b;
+	cout << "Enter two positive integers to calculate their least common multiple (LCM): ";
+	cin >> a >> b;
+	cout << "The LCM of " << a << " and " << b << " is " << lcm_it(a, b) << endl;
+	cout << "The LCM of " << a << " and " << b << " is " << lcm_rec(a, b) << endl;
+}
+
+// NWW(a, b) = (a * b) / NWD(a, b)
+
+
+int lcm_it(int a, int b) {
+	int ab = a * b;
+	int c = a % b;
+	while (c != 0) {
+		a = b;
+		b = c;
+		c = a % b;
+	}
+	int gcd = b; // po zakończeniu pętli b to NWD(a,b)
+	return ab / gcd;
+}
+
+int gcd_rec(int a, int b) {
+	if (b == 0)
+		return a;
+	return gcd_rec(b, a % b);
+}
+
+int lcm_rec(int a, int b) {
+	int gcd = gcd_rec(a, b);
+	return (a * b) / gcd;
+}
+
+*/
+
+/* zad 12 - Wykorzystaj poniższy kod, aby sprawdzić czas działania dla funkcji iteracyjnej i rekurencyjnej z zadań
+1-3. Przetestuj odpowiednio duże wartości aby zauważyć różnicę w czasie, która z funkcji działa szybciej? */
+
+#include <iostream> 
+#include <stdlib.h>
+#include <time.h>
+using namespace std;
+
+int main() { //kod 07_03
+	double czas;
+	clock_t start, koniec;
+
+	start = clock(); //rozpoczecie odliczania czasu
+
+	for (int i = 0; i < 10000; i++)
+		cout << i << " ";
+
+	koniec = clock();  //zakonczenie odliczania czasu
+	czas = (double)(koniec - start) / CLOCKS_PER_SEC; //zwrocenie czasu dzialania
+	cout << endl << endl << "Czas dzialania = " << czas << endl;
+
+	return 0;
+}
 
 
